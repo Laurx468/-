@@ -1,0 +1,9 @@
+import React from 'react'
+import '@tarojs/taro/html.css'
+import './app.scss'
+
+const App: React.FC = ({ children }) => {
+  return children
+}
+
+export default App

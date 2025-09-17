@@ -1,0 +1,189 @@
+.design-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8f9fa;
+
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24rpx 32rpx;
+    background: #fff;
+    box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+
+    .tool-left, .tool-right {
+      flex: 1;
+
+      .tool-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 16rpx 24rpx;
+        border-radius: 16rpx;
+        background: #f0f0f0;
+        font-size: 24rpx;
+        color: #666;
+
+        .tool-icon {
+          font-size: 32rpx;
+          margin-bottom: 8rpx;
+        }
+      }
+    }
+
+    .tool-center {
+      display: flex;
+      flex: 2;
+      justify-content: center;
+      gap: 16rpx;
+
+      .tool-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 16rpx;
+        border-radius: 16rpx;
+        min-width: 80rpx;
+        transition: all 0.3s ease;
+
+        &.active {
+          background: #007AFF;
+          color: #fff;
+          transform: scale(1.05);
+
+          .tool-name {
+            color: #fff;
+          }
+        }
+
+        .tool-icon {
+          font-size: 32rpx;
+          margin-bottom: 8rpx;
+        }
+
+        .tool-name {
+          font-size: 20rpx;
+          color: #666;
+        }
+      }
+    }
+  }
+
+  .canvas-container {
+    flex: 1;
+    position: relative;
+    background: #fff;
+    margin: 32rpx;
+    border-radius: 24rpx;
+    overflow: hidden;
+    box-shadow: 0 4rpx 24rpx rgba(0, 0, 0, 0.08);
+
+    .design-canvas {
+      width: 100%;
+      height: 600rpx;
+    }
+
+    .canvas-guide {
+      position: absolute;
+      bottom: 32rpx;
+      left: 32rpx;
+      right: 32rpx;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 16rpx 24rpx;
+      border-radius: 12rpx;
+      font-size: 24rpx;
+      text-align: center;
+    }
+  }
+
+  .elements-stats {
+    margin: 0 32rpx 24rpx;
+    background: #fff;
+    border-radius: 16rpx;
+    padding: 24rpx;
+    box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.05);
+
+    .stats-title {
+      font-size: 28rpx;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 16rpx;
+    }
+
+    .stats-grid {
+      display: flex;
+      justify-content: space-around;
+
+      .stats-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .stats-icon {
+          font-size: 48rpx;
+          margin-bottom: 8rpx;
+        }
+
+        .stats-count {
+          font-size: 32rpx;
+          font-weight: bold;
+          color: #007AFF;
+          margin-bottom: 4rpx;
+        }
+
+        .stats-label {
+          font-size: 20rpx;
+          color: #999;
+        }
+      }
+    }
+  }
+
+  .bottom-actions {
+    display: flex;
+    padding: 32rpx;
+    gap: 24rpx;
+    background: #fff;
+    box-shadow: 0 -4rpx 16rpx rgba(0, 0, 0, 0.08);
+
+    .action-button {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24rpx;
+      border-radius: 16rpx;
+      font-size: 28rpx;
+      transition: all 0.3s ease;
+
+      .action-icon {
+        font-size: 40rpx;
+        margin-bottom: 8rpx;
+      }
+
+      &.secondary {
+        background: #f0f0f0;
+        color: #666;
+
+        &:active {
+          background: #e0e0e0;
+          transform: scale(0.95);
+        }
+      }
+
+      &.primary {
+        background: #007AFF;
+        color: #fff;
+
+        &:active {
+          background: #0056b3;
+          transform: scale(0.95);
+        }
+      }
+    }
+  }
+}

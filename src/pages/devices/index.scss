@@ -1,0 +1,295 @@
+.devices-page {
+  background: #f8f9fa;
+  min-height: 100vh;
+  padding-bottom: 160rpx;
+
+  .search-section {
+    background: #fff;
+    padding: 32rpx;
+    box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+  }
+
+  .devices-scroll {
+    height: calc(100vh - 300rpx);
+  }
+
+  .devices-grid {
+    padding: 32rpx;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24rpx;
+
+    .device-card {
+      background: #fff;
+      border-radius: 24rpx;
+      padding: 32rpx;
+      box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+      border: 4rpx solid transparent;
+
+      &.selected {
+        border-color: #007AFF;
+        box-shadow: 0 8rpx 24rpx rgba(0, 122, 255, 0.2);
+        transform: translateY(-4rpx);
+      }
+
+      .device-header {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 24rpx;
+
+        .device-icon {
+          width: 80rpx;
+          height: 80rpx;
+          background: #f0f7ff;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .icon-emoji {
+            font-size: 48rpx;
+          }
+        }
+
+        .selected-badge {
+          position: absolute;
+          top: -8rpx;
+          right: 16rpx;
+          width: 32rpx;
+          height: 32rpx;
+          background: #52c41a;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .badge-text {
+            color: #fff;
+            font-size: 20rpx;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .device-info {
+        text-align: center;
+        margin-bottom: 24rpx;
+
+        .device-name {
+          display: block;
+          font-size: 28rpx;
+          font-weight: 600;
+          color: #333;
+          margin-bottom: 8rpx;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .device-price {
+          display: block;
+          font-size: 32rpx;
+          color: #ff6b6b;
+          font-weight: bold;
+          margin-bottom: 16rpx;
+        }
+
+        .device-features {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 8rpx;
+          margin-bottom: 16rpx;
+
+          .feature-tag {
+            background: #e6f3ff;
+            border-radius: 8rpx;
+            padding: 4rpx 8rpx;
+
+            .feature-text {
+              font-size: 20rpx;
+              color: #007AFF;
+            }
+          }
+        }
+
+        .device-suitable {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 8rpx;
+
+          .suitable-label {
+            font-size: 20rpx;
+            color: #999;
+            margin-right: 8rpx;
+          }
+
+          .suitable-rooms {
+            font-size: 20rpx;
+            color: #666;
+          }
+        }
+
+        .device-power {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .power-label {
+            font-size: 20rpx;
+            color: #999;
+            margin-right: 8rpx;
+          }
+
+          .power-value {
+            font-size: 20rpx;
+            color: #666;
+          }
+        }
+      }
+
+      .device-actions {
+        .add-button {
+          background: #007AFF;
+          color: #fff;
+          padding: 16rpx;
+          border-radius: 12rpx;
+          text-align: center;
+          transition: all 0.3s ease;
+
+          &:active {
+            background: #0056b3;
+            transform: scale(0.95);
+          }
+
+          .add-text {
+            font-size: 24rpx;
+            font-weight: 600;
+          }
+        }
+
+        .quantity-control {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .quantity-btn {
+            width: 48rpx;
+            height: 48rpx;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+
+            &:active {
+              background: #e0e0e0;
+              transform: scale(0.9);
+            }
+
+            .btn-text {
+              font-size: 24rpx;
+              font-weight: bold;
+              color: #666;
+            }
+          }
+
+          .quantity-text {
+            margin: 0 24rpx;
+            font-size: 28rpx;
+            font-weight: 600;
+            color: #333;
+          }
+        }
+      }
+    }
+  }
+
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 120rpx 40rpx;
+    text-align: center;
+
+    .empty-icon {
+      font-size: 96rpx;
+      margin-bottom: 32rpx;
+      opacity: 0.6;
+    }
+
+    .empty-text {
+      font-size: 32rpx;
+      color: #666;
+      margin-bottom: 16rpx;
+    }
+
+    .empty-desc {
+      font-size: 24rpx;
+      color: #999;
+    }
+  }
+
+  .selected-devices-float {
+    position: fixed;
+    bottom: 40rpx;
+    left: 32rpx;
+    right: 32rpx;
+    background: #fff;
+    border-radius: 24rpx;
+    box-shadow: 0 8rpx 40rpx rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+
+    .float-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 32rpx;
+
+      .selected-info {
+        .selected-count {
+          display: block;
+          font-size: 28rpx;
+          color: #333;
+          margin-bottom: 8rpx;
+        }
+
+        .total-price {
+          font-size: 36rpx;
+          color: #ff6b6b;
+          font-weight: bold;
+        }
+      }
+
+      .float-action {
+        display: flex;
+        align-items: center;
+        background: #007AFF;
+        color: #fff;
+        padding: 20rpx 32rpx;
+        border-radius: 16rpx;
+        transition: all 0.3s ease;
+
+        &:active {
+          background: #0056b3;
+          transform: scale(0.95);
+        }
+
+        .action-text {
+          font-size: 28rpx;
+          font-weight: 600;
+          margin-right: 8rpx;
+        }
+
+        .action-arrow {
+          font-size: 24rpx;
+        }
+      }
+    }
+  }
+}
